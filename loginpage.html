@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body
+    {
+        transition: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in;
+    }
+    .container
+    {
+        background-color: black;
+        border: 2px solid black;
+        color: white;
+        display:grid;
+        margin: 25% 30%;
+        justify-content: center;
+        width: 40%;
+    }
+    #text
+    {
+        display: flex;
+        justify-content: center;
+        font-weight:bold;
+    }
+    #username
+    {
+        width: 25vw;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 2%;
+    }
+    #passwd
+    {
+        width: 25vw;
+        margin: auto;
+        margin-bottom: 2%;
+    }
+    #image
+    {
+        width: 24vw;
+        margin-left: 5%;
+        display: flex;
+        margin-bottom: 5%;
+        justify-content: right;
+        
+    }
+    #image-btn
+    {
+        background-color: rgb(0, 0, 0);
+        border: none;
+    }
+    img{
+        width: 1vw;
+        height: 2vh;
+        filter: invert(100%);
+    }
+    img:hover
+    {
+        
+        cursor: pointer;
+    }
+    #submit
+    {
+        background-color: white;
+        width: 10vw;
+        margin: auto;
+        border: none;
+        border-radius: 8px;
+        margin-bottom: 5%;
+        font-weight: bold;
+    }
+    #submit:hover
+    {
+        background-color: gray;
+        color: white;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1 id="text">Login Page</h1>
+        <input type="text" id="username" placeholder="Enter your e-mail..">
+        <input type="password"  id="passwd" placeholder="Enter Password..">
+        <div id="image">
+            <button id="image-btn">
+                <img src="eye_159604.png" alt="hide" id="eye">
+            </button>
+        </div>
+        <button id="submit">Submit</button>
+    </div>
+</body>
+<script>
+    let showBut = document.getElementById("image-btn");
+    let container = document.getElementById("container");
+    let image = document.getElementById("eye");
+    let password = document.getElementById("passwd");
+    let light = 1;
+    showBut.addEventListener('click',function f1()
+    {
+        if(light==1)
+        {
+        document.body.style.backgroundColor = "rgb(0,0,0)";
+        // container.style.backgroundColor = "rgb(255,255,255)";
+        image.src = "turn-visibility-off-button_60533.png";
+        light = 0;
+        password.type = "text";
+        }
+        else
+        {
+            document.body.style.backgroundColor = "rgb(255,255,255)";
+            image.src = "eye_159604.png";
+            password.type = "password";
+            // container.style.backgroundColor = "rgb(0,0,0)";
+            light = 1;
+            
+        }
+
+    })
+</script>
+</html>
